@@ -8,6 +8,10 @@ Bundler.require(*Rails.groups)
 
 module ToyApp
   class Application < Rails::Application
+    #postmark_settings
+    config.action_mailer.delivery_method = :postmark
+    config.action_mailer.postmark_settings = { :api_token => "8f3526ce-8f0a-4176-bcd5-10e69b01258a" }
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.

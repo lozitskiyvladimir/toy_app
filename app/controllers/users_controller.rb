@@ -28,6 +28,9 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
+        #I try send message
+        UserMailer.message_1.deliver_now  
+
         format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
       else
